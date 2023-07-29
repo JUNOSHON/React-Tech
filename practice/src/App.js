@@ -13,26 +13,17 @@ function App() {
   
   
   const [data, setData] = useState([]);
-  const getData = async () => {
-    const res = await fetch("http://223.130.139.67:8000/Issue/").then((res) =>
-      res.json());
+  
+  const getData = () => {
+    fetch("http://223.130.139.67:8000/Issue/1", {})
+      .then(res => res.json())
+      .then((res) => setData(res.title));
     
-    const initData = res.slice(0, 20).map((it) => {
-      return {
-        id: it.id,
-        title: it.title,
-        country:it.country,
-      };
-    });
-    
-    setData(initData);
   };
   
   
-  useEffect(async () => {
-    
-     await getData();
-    
+  useEffect(() => {
+    getData();
   }, []);
   
   
