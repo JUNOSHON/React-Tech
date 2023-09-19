@@ -1,13 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import {Fragment} from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import React, {Fragment} from "react";
+import Counter from "./components/Counter";
+import Todos from "./components/Todos";
+import CounterContainer from "./containers/CounterContainer";
+import TodosContainer from "./containers/TodosContainer";
 
 function App() {
   return (
-    <Fragment>
+    <div>
+      
+      <CounterContainer/>
+      
+      <hr/>
+      <TodosContainer/>
     
-    
-    </Fragment>
+    </div>
   );
 }
 

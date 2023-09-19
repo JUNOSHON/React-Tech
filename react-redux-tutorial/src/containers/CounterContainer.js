@@ -18,7 +18,12 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  state => ({
+    number : state.counter.number,
+  }),
+  {
+    increase,
+    decrease,
+  }
 )(CounterContainer);
 
